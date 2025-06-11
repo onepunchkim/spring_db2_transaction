@@ -22,7 +22,7 @@ public class MemberService {
 
         log.info("== logRepository 호출 시작 ==");
         logRepository.save(logMessage);
-        log.info("== logRepository 호출 조오료 ==");
+        log.info("== logRepository 호출 종료 ==");
     }
 
     public void joinV2(String username) {
@@ -40,6 +40,6 @@ public class MemberService {
             log.info("log 저장에 실패했습니다. logMessage={}", logMessage.getMessage());
             log.info("정상 흐름 반환");
         }
-        log.info("== logRepository 호출 조오료 ==");
+        log.info("== logRepository 호출 종료 ==");
     }
 }
