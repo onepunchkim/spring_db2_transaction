@@ -8,6 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 import java.util.Optional;
 
+import static org.springframework.transaction.annotation.Propagation.*;
+
 @Slf4j
 @Repository
 @RequiredArgsConstructor
@@ -15,7 +17,7 @@ public class LogRepository {
 
     private final EntityManager em;
 
-    @Transactional
+    @Transactional(propagation = REQUIRES_NEW)
     public void save(Log logMessage) {
         log.info("log 저장");
         em.persist(logMessage);
